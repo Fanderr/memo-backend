@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: memo-backend
+
+  datasource:
+    url: ${DB_URL:jdbc:sqlserver://localhost:1433;databaseName=MemoDb;encrypt=true;trustServerCertificate=true}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:YourPassword123!}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update          # 自動建立/更新資料表結構，正式環境請改為 validate 或 none
+    show-sql: true              # 顯示 SQL 語句（開發用）
+    properties:
+      hibernate:
+        format_sql: true        # 將 SQL 格式化輸出
+        dialect: org.hibernate.dialect.SQLServerDialect
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.example.memo: DEBUG
+    org.springframework.web: INFO
