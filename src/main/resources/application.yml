@@ -3,7 +3,7 @@ spring:
     name: memo-backend
 
   datasource:
-    url: ${DB_URL:jdbc:sqlserver://localhost:1433;databaseName=MemoDb;encrypt=true;trustServerCertificate=true}
+    url: ${DB_URL:sqlserver_db;databaseName=MemoDb;encrypt=true;trustServerCertificate=true}
     username: ${DB_USERNAME:sa}
     password: ${DB_PASSWORD:YourPassword123!}
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
